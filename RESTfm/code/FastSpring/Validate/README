@@ -1,0 +1,3 @@
+This PHP application implements a validation service for FastSpring.
+
+FastSpring has a peculiar HTTP status code for invalid requests (403).

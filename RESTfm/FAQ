@@ -1,0 +1,27 @@
+Q: I am using Apache web server and .htaccess redirection is not working when
+   connecting through https:// .
+
+A: SSL (https) is probably configured as a VirtualHost, and 'AllowOverride All'
+   will need to be added to the VirtualHost section.
+
+
+Q: I am using Apache web server and get 404 errors for URLs with %2F (encoded
+   forward slash) in them.
+
+A: Add the following line to Apache httpd conf in the server or virtual host
+   section. (Note: There are security risks associated with doing this.) :
+   AllowEncodedSlashes On
+
+
+Q: The diagnostics report.php never returns and the web page times out.
+
+A: One of the final tests is a connection test to the FileMaker Server. If a
+   firewall is preventing access to the FileMaker Server Web Publishing service,
+   then the connection will hang.
+
+
+Q: Is it possible to restrict the fields returned when GETting a resource ?
+
+A. The FileMaker PHP API does not provide this feature, every field is returned
+   even if it does not contain data. It is recommended that a custom layout be
+   created with only the required fields.

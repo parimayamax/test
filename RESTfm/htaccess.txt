@@ -1,0 +1,34 @@
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files RESTfm.ini.php>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Uncomment to enforce SSL with redirect.
+    #RewriteCond %{HTTPS} !=on
+    #RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Work around for HTTP Basic Auth for Apache CGI/FCGI/suExec server modes.
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Set RewriteBase if RESTfm is in a subdirectory.
+    # Must also set baseURI in RESTfm.ini.php
+    # Example for: http://example.com/~user/RESTfm
+    #    would be: RewriteBase /~user/RESTfm
+    RewriteBase /RESTfm
+
+    # Block access to .svn files.
+    RewriteRule .*\.svn/.* - [F]
+
+    # Redirect all URLs to RESTfm.php
+    RewriteCond %{REQUEST_URI} !RESTfm\.php$
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule .* RESTfm.php [L,QSA]
+</IfModule>

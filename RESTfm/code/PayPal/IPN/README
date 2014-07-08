@@ -1,0 +1,10 @@
+This PHP application implements a listener service for a PayPal invoked
+Instant Payment Notification (IPN).
+
+As defined by the following PayPal documents.
+
+https://www.x.com/developers/paypal/documentation-tools/ipn/integration-guide/IPNIntro
+https://www.x.com/developers/PayPal/documentation-tools/code-sample/216623
+
+This application takes care to preserve the contents of the original IPN
+message, and also optionally parse out fields of interest.

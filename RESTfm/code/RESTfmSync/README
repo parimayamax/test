@@ -1,0 +1,5 @@
+RESTfmSync is a solution for syncing data from FileMaker Pro or FileMaker Go
+to FileMaker Server via RESTfm.
+
+For installation and configuration instructions, please see:
+http://www.restfm.com/restfmsync-manual

@@ -1,0 +1,21 @@
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files RESTfm.ini.php>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Mod Rewrite
+Options -Multiviews
+RewriteEngine On
+RewriteBase /blog/RESTfm
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /index.php [L]
+
+    RewriteCond %{REQUEST_URI} !RESTfm\.php$
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule .* RESTfm.php [L,QSA]

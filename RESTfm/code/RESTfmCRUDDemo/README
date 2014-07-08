@@ -1,0 +1,7 @@
+Demonstration of POST, GET, PUT and DELETE (or Create, Read, Update and
+Delete, a.k.a CRUD) functionality with RESTfm.
+
+This application may be run from the command line with the php executable.
+
+The output is quite verbose, as all of the responses from RESTfm are
+dumped to output for inspection.
